@@ -1,0 +1,39 @@
+footer {
+  background: #F5F5F7;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
+}
+
+footer .social-icons {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #B08EA2;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  background: #925D73;
+}
+
+footer .social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
