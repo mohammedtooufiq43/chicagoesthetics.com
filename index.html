@@ -157,47 +157,92 @@
         gap: 1rem;
       }
     }
-/*     header */
-header nav ul {
-  display: flex;
-  flex-wrap: wrap; /* تسمح بالتفاف القائمة */
-  justify-content: center;
-  gap: 10px; /* مسافة أقل بين العناصر */
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-@media (max-width: 600px) {
-  header nav ul {
-    flex-direction: column; /* عمودي */
-    gap: 8px;
-    width: 100%;
-  }
-  header nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-  header nav ul li a {
-    display: block;
-    padding: 10px 0;
-  }
-  .btn-book {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    padding: 12px 0;
+/*     heda */
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
   }
   header {
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    position: relative;
   }
   .logo {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
   }
-}
-
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  .btn-book {
+    padding: 8px 16px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  /* زر الهامبرغر (menu toggle) */
+  #menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  /* ====== Responsive for mobile ====== */
+  @media (max-width: 768px) {
+    #menu-toggle {
+      display: block;
+      margin-right: 10px;
+    }
+    nav {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #ccc;
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      z-index: 10;
+    }
+    nav.show {
+      display: flex;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+    }
+    header {
+      padding: 10px 15px;
+    }
+    /* arrange header items horizontally with some spacing */
+    header {
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    /* keep btn-book on the right */
+    .btn-book {
+      margin-left: auto;
+    }
+  }
 
  
 
@@ -207,6 +252,10 @@ header nav ul {
 
 <header>
   <div class="logo">Chicago Esthetics</div>
+
+  <!-- زر الهامبرغر -->
+  <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+
   <nav>
     <ul>
       <li><a href="#hero">Home</a></li>
@@ -216,8 +265,19 @@ header nav ul {
       <li><a href="#contact">Contact Us</a></li>
     </ul>
   </nav>
+
   <a href="#booking" class="btn-book">Book Now</a>
 </header>
+
+<script>
+  // JavaScript لتفعيل زر الهامبرغر
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('header nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+</script>
 
 <section id="hero" class="hero">
   <div class="hero-content">
