@@ -158,18 +158,25 @@
       }
     }
 /*     header */
-    header {
+/* الأساسيات للـ header */
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  flex: 1 1 auto;
+}
+
+nav {
+  flex: 2 1 auto;
 }
 
 nav ul {
@@ -178,6 +185,7 @@ nav ul {
   gap: 20px;
   margin: 0;
   padding: 0;
+  justify-content: center;
 }
 
 nav ul li a {
@@ -193,30 +201,45 @@ nav ul li a {
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
+  flex: 0 1 auto;
 }
 
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
-  nav {
-    width: 100%;
-    order: 3;
-  }
+/* نسق الهاتف */
+@media (max-width: 600px) {
   nav ul {
     flex-direction: column;
     gap: 10px;
-    padding-left: 0;
+    align-items: center;
+    width: 100%;
   }
-  nav ul li {
-    text-align: center;
+
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
   }
+
   .btn-book {
     order: 2;
     margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  header {
+    justify-content: center;
   }
 }
+
+
+
+ 
 
   </style>
 </head>
